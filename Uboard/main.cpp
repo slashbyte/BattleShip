@@ -30,8 +30,8 @@ public:
 	{
 		// Set the bInheritHandle flag so pipe handles are inherited. 
 		saAttr.nLength = sizeof(SECURITY_ATTRIBUTES);
-    	saAttr.bInheritHandle = TRUE;
-    	saAttr.lpSecurityDescriptor = NULL;
+		saAttr.bInheritHandle = TRUE;
+		saAttr.lpSecurityDescriptor = NULL;
 		//child process's STDOUT is the program output or data that child process returns
    		// Create a pipe for the child process's STDOUT. 
 	    if (!CreatePipe(&g_hChildStd_OUT_Rd, &g_hChildStd_OUT_Wr, &saAttr, 0))	
@@ -732,6 +732,10 @@ bool runM(char engineA[100], char engineB[100], int gameS, bool flagV)
 
 int main(int argc, char** argv)
 {
+	printf("Slash/Byte                             2018\n");
+    printf("Uboard, Battleship engine benchmark program\n");
+	printf("-------------------------------------------\n");
+	
 	char engineA[100] = {0};
 	char engineB[100] = {0};
 	int gameS = 10;
