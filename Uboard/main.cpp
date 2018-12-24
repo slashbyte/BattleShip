@@ -776,7 +776,7 @@ int main(int argc, char** argv)
 			case 'h':
 				printf("Usage: %s -a engineone.exe -n 100 [-f -v]\n", argv[0]);
 				printf("       %s -a engineone.exe -n 1 -s [-v]\n", argv[0]);
-				printf("       %s -a engineone.exe -b enginetwo.exe -n 100 -m\n", argv[0]);
+				printf("       %s -a engineone.exe -b enginetwo.exe -n 100 -m [-v]\n", argv[0]);
 				printf("       %s -a engineone.exe -b enginetwo.exe -n 1 -s [-v]\n", argv[0]);
 				printf("       %s -a engineone.exe -d [-v]\n", argv[0]);
 				return 0;
