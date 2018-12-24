@@ -51,7 +51,7 @@ Min moves per game: 82
 
 Exiting Gracefully
 ```
-
+***
 ```
 Uboard.exe -a engineone.exe -b enginetwo.exe -n 1 -s [-v]
 ```
@@ -99,7 +99,7 @@ Solved in 55, barracuda.exe
 
 Exiting Gracefully   
 ```
-
+***
 ```
 Uboard.exe -a engineone.exe -b enginetwo.exe -n 100 -m [-v]
 ```
@@ -146,7 +146,7 @@ barracuda.exe, by 10 wins
                                                                                
 Exiting Gracefully
 ```
-
+***
 ```
 Uboard.exe -a engineone.exe -d [-v]
 ```
