@@ -1,9 +1,9 @@
-#include <windows.h>	//ewwww....
+#include <windows.h>  //ewwww....
 #include <stdio.h> 
-#include <string>		// memset & stuff
-#include <stdlib.h>     // srand, rand
-#include <time.h>       // time 
-#include <unistd.h>		//getopt
+#include <string>     // memset & stuff
+#include <stdlib.h>   // srand, rand
+#include <time.h>     // time 
+#include <unistd.h>   //getopt
 
 class Stream
 {
