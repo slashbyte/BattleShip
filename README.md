@@ -6,7 +6,7 @@ Codename **Barracuda** is an engine that uses "superpositions" to calculate the 
 Codename **The Drunk Capitan** randomly picks a move and sticks to it, even though it only looked good three beers ago.
 
 # Uboard (test program)
-This program allows you to pin engines against each other, run tests, and other things. Since theres no standard battleship engine protocol, I winged it. 
+This program allows you to pin engines against each other, run tests, and other things. Since there are no standard battleship engine protocol, I winged it. 
 
 ### Help File
 ```
