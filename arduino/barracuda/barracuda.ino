@@ -1,19 +1,29 @@
 /*
+   Slash/Byte 2018
    Battleship Game engine for hardware!
-   originally the motivation behind building an engine for battleship
+   it was originally the motivation for building an engine for battleship
+   used v2 code for this, its on my github somewhere.
 
    This will solve randomly gen-ed boards, per the rules, of battleship
    Comes as is...
 
-   Slash/Byte 2018
+   Could shrink the internal play boards, use the memory better,
+   put stuff in PROGMEM to shrink memory usage.
+   Its more or less "concept" code? I just wanted a battleship playing arduino
+   "well~s, I got one now".
 
-  Sketch uses 6914 bytes (21%) of program storage space. Maximum is 32256 bytes.
-  Global variables use 390 bytes (19%) of dynamic memory, leaving 1658 bytes for local variables. Maximum is 2048 bytes.
+   Sketch uses 6914 bytes (21%) of program storage space. Maximum is 32256 bytes.
+   Global variables use 400 bytes (19%) of dynamic memory, leaving 1648 bytes for local variables. Maximum is 2048 bytes.
 
+   ...and yes, everything all crammed together like this, is NOT very good coding.
+   but its open source, that counts for something right?
 
-  ...and yes, everything all crammed togeather like this is not very good codeing.
-  but its open source, that counts for somethig right?
-
+   used this blogpost as a guide.
+   http://www.datagenetics.com/blog/december32011/
+   Code is 100% mine, nobody writes crappy code like this anyway lol
+   its not all, formated neat and documented well.
+   its like a programmer puked in notepad. Who dose that?
+   slash/byte dose... *closes notepad*
 */
 
 //generates a random board state to solve
@@ -44,7 +54,7 @@ class Ships
       return _sunk;
     }
 
-    //uses the current board to find the ship probobility 'super'
+    //uses the current board to find the ship probability 'super'
     void target(uint8_t board[10][10], uint8_t super[10][10])
     {
       uint8_t j = 0;
@@ -63,7 +73,7 @@ class Ships
     uint8_t _max;
     bool _sunk; //sunk state
 
-    //vertical and horizontal, cell FIT CHECK, virtical, ort = true
+    //vertical and horizontal, cell FIT CHECK, vertical, ort = true
     bool fitCell(uint8_t i, uint8_t j, uint8_t board[10][10], bool ort)
     {
       _max = i + _length;
@@ -78,7 +88,7 @@ class Ships
       return 0;
     }
 
-    //vertical and horizontal, cell FILL, virtical, ort = true
+    //vertical and horizontal, cell FILL, vertical, ort = true
     void setCell(uint8_t i, uint8_t j, uint8_t board[10][10], uint8_t super[10][10], bool ort)
     {
       _max = i + _length;
@@ -89,7 +99,7 @@ class Ships
         if (*bp == 1) //if the space has been hit
         {
           *sp = 0; //zero it out
-          if ((i + 1) <= 9) //noth & west check, 4 cells all round
+          if ((i + 1) <= 9) //north & west check, 4 cells all round
           {
             ort ? bp = &board[i + 1][j] : bp = &board[j][i + 1];
             if (*bp == 0) //check if its free
@@ -176,17 +186,17 @@ class Game
     const char* getMove()
     {
       findSuper(); //find the super position for the game board
-      findBest(); //find the highist rated move in the super position
+      findBest(); //find the highest rated move in the super position
       static char a[10] = {0};
       snprintf(a, 10, "%c%d", (char)lastMoveY + 97, lastMoveX + 1); //convert to c-string
       return a;
     }
 
-    //gets the move in index format, not usefull unless testing
+    //gets the move in index format, not useful unless testing
     void getMove(uint8_t &y, uint8_t &x)
     {
       findSuper(); //find the super position for the game board
-      findBest(); //find the highist rated move in the super position
+      findBest(); //find the highest rated move in the super position
       y = lastMoveY; //sets the move index
       x = lastMoveX; //sets the move index
     }
@@ -200,7 +210,7 @@ class Game
     uint8_t Xboard[10][10]; //game board
     Ships *myShips[5]; //array of ship objects
 
-    //calulate new super position for the current board
+    //calculate new super position for the current board
     void findSuper(void)
     {
       memset(super, 0, sizeof(super)); //clear the super position
@@ -224,8 +234,8 @@ class Game
 
       if ((Y == shipLength[len]) && (X == 1)) //figure out the orientation
       {
-        X = 0;
-        while (Xboard[lastMoveY][X] != 1) //count untill we find the hit ship
+        X = 0; //no significance, just needed a var for a counter
+        while (Xboard[lastMoveY][X] != 1) //count until we find the hit ship
           X++;
         for (i = X; i < shipLength[len] + X; i++) //change the state, horizontal
           Xboard[lastMoveY][i] = 3; //use last move as ref
@@ -233,8 +243,8 @@ class Game
       }
       else if ((X == shipLength[len]) && (Y == 1)) //figure out the orientation
       {
-        Y = 0;
-        while (Xboard[Y][lastMoveX] != 1) //count untill we find first hit of the ship
+        Y = 0; //no significance, just needed a var for a counter
+        while (Xboard[Y][lastMoveX] != 1) //count until we find first hit of the ship
           Y++;
         for (i = Y; i < shipLength[len] + Y; i++) //change the state, vertical
           Xboard[i][lastMoveX] = 3; //use last move as ref
@@ -250,11 +260,11 @@ class Game
       for (uint8_t j = 0; j < 5; j++)
         for (i = 0; i < 10; i++)
         {
-          b = super[i][j] > super[i][j + 5] ? super[i][j] : super[i][j + 5]; //'b' is now the largist of the two numbers
-          if (a < b) //if 'a' is bigger than the largist
+          b = super[i][j] > super[i][j + 5] ? super[i][j] : super[i][j + 5]; //'b' is now the largest of the two numbers
+          if (a < b) //if 'a' is bigger than the largest
           {
-            a = b; //a becomes the largist
-            lastMoveY = i; //'i' dont change between the two
+            a = b; //a becomes the largest
+            lastMoveY = i; //'i' don't change between the two
             lastMoveX = a == super[i][j] ? j : j + 5; //check which number was assigned, give it a 'j' val.
           } //I save 50 loops, faster = better?
         }
@@ -282,18 +292,18 @@ void setup()
 // the loop function runs over and over again forever
 void loop()
 {
+  /* change to set amount of games played */
+  int gameCnt = 10; //number of games to play
+
   /* start of engine test */
   uint8_t max = 10, min = 100;
   uint8_t OP[10][10] = {{0}};
   uint8_t shipLength[5] = {5, 4, 3, 3, 2};
   uint8_t shipCount[5] = {0};
+  int freq[101] = {0};
 
   Game myGame; //game object
-
-  /* change to set amount of games played */
-  int gameCnt = 10; //number of games to play
   Serial.println("Games started...");
-  int freq[101] = {0};
 
   /* main game loop */
   for (int i = 0; i < gameCnt; i++)
@@ -322,7 +332,7 @@ void loop()
       else //send hit
       {
         shipCount[z - 1] += 1;
-        if (shipCount[z - 1] == shipLength[z - 1]) //is the ship was a hink and sink
+        if (shipCount[z - 1] == shipLength[z - 1]) //is the ship was a hit and sunk
         {
           sunk++;
           myGame.updateBoard(1, z); //send which ship sunk
@@ -342,6 +352,7 @@ void loop()
       Serial.print("Move Count: ");
       Serial.println(mv);
     */
+    //man that was too much info...
   }
   int avg = 0;
   for (int i = 1; i < 101; i++) //calc average
@@ -349,14 +360,17 @@ void loop()
   Serial.print("Average Moves till Victory: ");
   Serial.println((float)avg / (float)gameCnt, 2); //displays move average
   /* end of engine test */
-  Serial.println("I'm gona stay in a loop now...");
-  while (1)
+
+  Serial.println("I'm gona stay in a loop now... FOREVER!");
+  while (1) //'NASA' approved while loop
   {
     digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
     delay(1000);                       // wait for a second
     digitalWrite(LED_BUILTIN, LOW);    // turn the LED off by making the voltage LOW
     delay(1000);
   }
+  Serial.println("If you can read this, something went very wrong...");
+  Serial.println("Please contact NASA for help, thank you");
 }
 
 /* prints the board to serial */
@@ -411,3 +425,5 @@ bool checkFit(uint8_t op[10][10], bool ort, uint8_t A, uint8_t B, uint8_t length
   }
   return 0;
 }
+
+//EOF

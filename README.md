@@ -5,6 +5,13 @@ Codename **Barracuda** is an engine that uses "superpositions" to calculate the 
 
 Codename **The Drunk Capitan** randomly picks a move and sticks to it, even though it only looked good three beers ago.
 
+# Now With Arduino
+This is what I really wanted the engine for, enjoy.
+```
+Sketch uses 6914 bytes (21%) of program storage space. Maximum is 32256 bytes.
+Global variables use 400 bytes (19%) of dynamic memory, leaving 1648 bytes for local variables. Maximum is 2048 bytes.
+```
+
 # Uboard (test program)
 This program allows you to pin engines against each other, run tests, and other things. Since there are no standard battleship engine protocol, I winged it. 
 
