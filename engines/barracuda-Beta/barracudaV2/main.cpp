@@ -1,5 +1,5 @@
 /*
- * Slash/Byte                    12-24-2018
+ * Slash/Byte                    12-27-2018
  *
  * used this blogpost as a guide
  * http://www.datagenetics.com/blog/december32011/
