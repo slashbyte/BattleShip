@@ -19,7 +19,6 @@
 #include <iostream>
 #include <string.h>
 #include <stdint.h>
-
 #include <stdlib.h>     /* srand, rand */
 #include <time.h>       /* time */
 
@@ -29,7 +28,6 @@ void genGame(uint8_t op[10][10]);
 //96 'abcde, 32 [space]!"#
 //32 for game board playing, 96 for board with ships
 void printBoard(uint8_t OP[10][10], int font = 96); //pretty print board
-
 
 class Ships
 {
