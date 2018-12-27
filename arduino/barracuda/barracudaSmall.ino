@@ -172,7 +172,6 @@ class Barracuda
           *sp += 1;
       }
     }
-
 };
 
 void Blink() {
