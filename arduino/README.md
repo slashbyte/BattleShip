@@ -5,7 +5,7 @@ Sketch uses 6914 bytes (21%) of program storage space. Maximum is 32256 bytes.
 Global variables use 390 bytes (19%) of dynamic memory, leaving 1658 bytes for local variables. Maximum is 2048 bytes.
 ```
 
-## Serial Output of 'barracudaSmall.ino
+## Serial Output of 'barracudaSmall.ino'
 ```
 Battleship Game Engine for the arduino
 Slash/Byte, 2018
