@@ -29,7 +29,7 @@ Move Count: 54
     {0, 0, 5, 5, 0, 0, 0, 0, 0, 0}
   };
 ```
-Barracuda Solved this board state with no knowledge of the board. In 381 milliseconds, in 54 consecutive moves, ran on 'seeeduino v4.2' (16Mhz).
+Barracuda Solved this board state with no knowledge of the board. In 381 milliseconds, in 54 consecutive moves, test preformed with 'seeeduino v4.2' (16Mhz).
 ## Notes
 This is test code, so its not perfect, keep that in mind.
 
