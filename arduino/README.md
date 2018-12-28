@@ -54,4 +54,4 @@ This project is licensed under the MIT License
 (https://opensource.org/licenses/MIT)
 ## Acknowledgments
 * Thanks Science
-http://www.datagenetics.com/blog/december32011/
+* http://www.datagenetics.com/blog/december32011/
