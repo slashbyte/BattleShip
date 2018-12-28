@@ -32,7 +32,7 @@ Move Count: 54
     {0, 0, 5, 5, 0, 0, 0, 0, 0, 0}
   };
 ```
-Barracuda Solved this board state with no knowledge of the board. In 381 milliseconds, in 54 consecutive moves.
+Barracuda Solved this board state with no knowledge of the board, in 381 milliseconds, in 54 consecutive moves.
 ## More Tests 'barracudaSmall.ino'
 Adafruit ItsyBitsy M4 Express, 120 MHz. The same board state from above was used during testing.
 ### Compiler Output
