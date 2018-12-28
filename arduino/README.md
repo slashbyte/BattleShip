@@ -1,9 +1,5 @@
 # Arduino Battleship Engine
 A minimal, but very functional, battleship 'AI' that runs on arduino. Should compile and run just fine.
-```
-Sketch uses 6914 bytes (21%) of program storage space. Maximum is 32256 bytes.
-Global variables use 390 bytes (19%) of dynamic memory, leaving 1658 bytes for local variables. Maximum is 2048 bytes.
-```
 
 ## Testing 'barracudaSmall.ino'
 seeduino v4.2, 16Mhz
@@ -20,7 +16,7 @@ Slash/Byte, 2018
 Now Solving, Finished in 381 ms
 Move Count: 54
 ```
-### Game Data
+### Game Data / Board State
 ```
   //board to solve
   uint8_t OP[10][10] = {
@@ -36,10 +32,9 @@ Move Count: 54
     {0, 0, 5, 5, 0, 0, 0, 0, 0, 0}
   };
 ```
-Barracuda Solved this board state with no knowledge of the board. In 381 milliseconds, in 54 consecutive moves, test preformed with 'seeeduino v4.2', 16Mhz.
-
+Barracuda Solved this board state with no knowledge of the board. In 381 milliseconds, in 54 consecutive moves.
 ## More Tests 'barracudaSmall.ino'
-Adafruit ItsyBitsy M4 Express, 120 MHz. The same board state from above was used.
+Adafruit ItsyBitsy M4 Express, 120 MHz. The same board state from above was used during testing.
 ### Compiler Output
 ```
 Sketch uses 11984 bytes (2%) of program storage space. Maximum is 507904 bytes.
