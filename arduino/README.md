@@ -29,7 +29,7 @@ Move Count: 54
     {0, 0, 5, 5, 0, 0, 0, 0, 0, 0}
   };
 ```
-Barracuda Solved this board state with no knowledge of the board. In 381 milliseconds, in 54 consecutive moves, test preformed with 'seeeduino v4.2' (16Mhz).
+Barracuda Solved this board state with no knowledge of the board. In 381 milliseconds, in 54 consecutive moves, test preformed with 'seeeduino v4.2', 16Mhz.
 
 ## More Tests 'barracudaSmall.ino'
 Adafruit ItsyBitsy M4 Express, 120 MHz. The same board state from above was used.
@@ -54,4 +54,4 @@ This project is licensed under the MIT License
 (https://opensource.org/licenses/MIT)
 ## Acknowledgments
 * Thanks Science
-
+http://www.datagenetics.com/blog/december32011/
