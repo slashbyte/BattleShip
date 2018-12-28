@@ -30,6 +30,22 @@ Move Count: 54
   };
 ```
 Barracuda Solved this board state with no knowledge of the board. In 381 milliseconds, in 54 consecutive moves, test preformed with 'seeeduino v4.2' (16Mhz).
+
+## More Tests
+Adafruit ItsyBitsy M4 Express, 120 MHz. The same board state from above was used.
+### Compiler Output
+```
+Sketch uses 11984 bytes (2%) of program storage space. Maximum is 507904 bytes.
+```
+### Results
+```
+Battleship Game Engine for the arduino
+Slash/Byte, 2018
+
+Now Solving, Finished in 29 ms
+Move Count: 54
+
+```
 ## Notes
 This is test code, so its not perfect, keep that in mind.
 
