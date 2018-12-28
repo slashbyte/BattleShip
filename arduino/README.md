@@ -31,7 +31,7 @@ Move Count: 54
 ```
 Barracuda Solved this board state with no knowledge of the board. In 381 milliseconds, in 54 consecutive moves, test preformed with 'seeeduino v4.2' (16Mhz).
 
-## More Tests
+## More Tests 'barracudaSmall.ino'
 Adafruit ItsyBitsy M4 Express, 120 MHz. The same board state from above was used.
 ### Compiler Output
 ```
